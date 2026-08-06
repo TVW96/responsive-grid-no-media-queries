@@ -209,6 +209,14 @@ Format the .media-card components. Use CSS Flexbox inside each card to ensure th
 ### Prompt Blueprint for Your AI Peer
 "I need to write a modern, highly responsive CSS file for this gallery page [paste HTML]. The .grid-container must layout its child cards using CSS Grid. You must use the formula repeat(auto-fit, minmax(300px, 1fr)) for grid-template-columns. I want the layout to handle responsiveness entirely on its own—the use of @media screen breakpoints for sizing columns is strictly forbidden. Please use relative spacing properties (like em/rem/%) and explain how the browser decides when to wrap cards using auto-fit and minmax()."
 
+#### Generated Explanation
+How auto-fit + minmax() decides wrapping
+Each grid track is constrained to minmax(300px, 1fr): 300px is the floor, and 1fr is the ceiling (an equal share of remaining space). The browser's grid algorithm:
+
+Calculates how many 300px tracks can fit in the container's content-box width (dividing available width by 300px, rounding down).
+auto-fit collapses any leftover empty tracks to 0px (as opposed to auto-fill, which would leave them as empty gaps), so the tracks that do have content stretch via 1fr to consume all remaining space evenly.
+As the viewport shrinks, the browser continuously recomputes that count — the moment there isn't room for another full 300px column plus the required gap, it drops a column and redistributes width to the rest. Below 300px + padding, only one column fits and cards stack vertically.
+This happens on every resize/reflow — it's the browser's layout engine doing per-frame track-fitting math, not a fixed set of breakpoints, which is why it can respond to any container width (even inside a resizable panel or sidebar), not just the viewport sizes you'd normally hardcode into @media queries.
 
 ## Verification (Human Audit)
 AI assistants are incredibly helpful, but they frequently inject legacy fallback rules (like floats or unnecessary @media hacks) when designing responsive layouts. You must audit the generated stylesheet to verify it meets these strict requirements:
