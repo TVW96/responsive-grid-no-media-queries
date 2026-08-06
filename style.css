@@ -45,7 +45,7 @@ body {
 /* -------------------------------------------------
    Grid container - auto fit grid
    auto-fit + minmax handles all responsiveness —
-   no @media breakpoints needed.
+   no media breakpoints needed.
 ------------------------------------------------- */
 
 .grid-container {
