@@ -43,7 +43,7 @@ body {
 }
 
 /* -------------------------------------------------
-   Grid container
+   Grid container - auto fit grid
    auto-fit + minmax handles all responsiveness —
    no @media breakpoints needed.
 ------------------------------------------------- */
@@ -55,7 +55,7 @@ body {
 }
 
 /* -------------------------------------------------
-   Card
+   Media Card - flexbox container
 ------------------------------------------------- */
 
 .media-card {
