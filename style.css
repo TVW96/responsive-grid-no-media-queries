@@ -1,3 +1,5 @@
+@import url("https://fonts.cdnfonts.com/css/digital-strip");
+
 /* -------------------------------------------------
    Base
 ------------------------------------------------- */
@@ -32,11 +34,14 @@ body {
 }
 
 .gallery-title {
+  font-family: "DigitalStrip", "Courier New", monospace;
   font-size: clamp(1.75rem, 2.5vw + 1rem, 3rem);
+  font-weight: 700;
   margin: 0 0 0.5em;
 }
 
 .gallery-subtitle {
+  font-family: "DigitalStrip", "Courier New", monospace;
   font-size: clamp(1rem, 0.5vw + 0.85rem, 1.25rem);
   color: #a7abb8;
   margin: 0;
@@ -105,7 +110,9 @@ body {
 }
 
 .media-card__heading {
+  font-family: "DigitalStrip", "Courier New", monospace;
   font-size: 1.25rem;
+  font-weight: 700;
   margin: 0.2em 0;
 }
 
