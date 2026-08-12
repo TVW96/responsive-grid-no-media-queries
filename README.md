@@ -226,3 +226,20 @@ AI assistants are incredibly helpful, but they frequently inject legacy fallback
 **The Math of auto-fit vs. auto-fill:** Verify the difference between these keywords. If you only have 2 cards on a wide screen, auto-fit will stretch them to fill the remaining space, whereas auto-fill would leave empty columns. Ensure the AI used auto-fit to keep your columns stretched proportionally.
 
 **Logical Gaps:** Confirm that card separation is controlled entirely by gap on the parent grid, rather than margins on individual cards.
+
+## Linting
+
+Install the development dependencies once:
+
+```sh
+npm install
+```
+
+Run HTML Validate and Stylelint together:
+
+```sh
+npm run lint
+```
+
+The individual checks are available as `npm run lint:html` and `npm run lint:css`.
+Stylelint can automatically fix supported CSS issues with `npm run lint:css:fix`.

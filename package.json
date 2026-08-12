@@ -1,0 +1,16 @@
+{
+  "name": "responsive-grid-no-media-queries",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "npm run lint:html && npm run lint:css",
+    "lint:html": "html-validate index.html",
+    "lint:css": "stylelint style.css",
+    "lint:css:fix": "npm run lint:css -- --fix"
+  },
+  "devDependencies": {
+    "html-validate": "^11.6.2",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
